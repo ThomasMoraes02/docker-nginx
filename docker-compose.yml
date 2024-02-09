@@ -7,7 +7,12 @@ services:
     ports:
       - "8012:80"
       - "8013:81"
+      - "8004:8004"
+      - "8005:8005"
     volumes:
       - ./docker/nginx/logs:/var/log/nginx
-      - ./docker/nginx/conf.d/server1.conf:/etc/nginx/conf.d/server1.conf
-      - ./server1:/usr/share/nginx/server1
+      - ./docker/nginx/conf.d/server.conf:/etc/nginx/conf.d/server.conf
+      - ./server:/usr/share/nginx/server
+      - ./docker/nginx/conf.d/microsservice.conf:/etc/nginx/conf.d/microsservice.conf
+      - ./microsservices/ms1:/usr/share/nginx/microsservices/ms1
+      - ./microsservices/ms2:/usr/share/nginx/microsservices/ms2
