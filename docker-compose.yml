@@ -9,6 +9,7 @@ services:
       - "8013:81"
       - "8004:8004"
       - "8005:8005"
+      - "8003:8003"
     volumes:
       - ./docker/nginx/logs:/var/log/nginx
       - ./docker/nginx/conf.d/server.conf:/etc/nginx/conf.d/server.conf
